@@ -3,7 +3,7 @@ apirxJava
 create interface  apiinterface.kt
 
  @FormUrlEncoded
-    @POST("end point") //  Ex. =  /api/login.php
+    @POST("end point") 
     fun loginApiCall(
         @Field("number") number: String?,
         @Field("id") id: String?,
@@ -46,7 +46,7 @@ implementation 'com.github.milansobhashna:apirxJava:1.0.0'
 
 variable ==>
 
-val mApiConfig = ApiConfig("base url ") // ex.  ApiConfig("www.google.com")
+val mApiConfig = ApiConfig("base url ") 
 val mCompositeSubscription : CompositeSubscription? = CompositeSubscription()
 
 call api function ==>
