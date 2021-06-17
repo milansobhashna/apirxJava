@@ -2,27 +2,29 @@
 apirxJava
 create interface  apiinterface.kt
 
- @FormUrlEncoded
+``` @FormUrlEncoded
     @POST("end point") 
     fun loginApiCall(
         @Field("number") number: String?,
         @Field("id") id: String?,
     ): Observable<LogInResponse>
-
+```
 create response model loginresponse.kt
 
-data class LogInResponse(
+```data class LogInResponse(
     val `data`: String,
     val message: String,
     val sucess: Int
 )
-
+```
 add dependency = > 
 
-
+```
 maven { url 'https://jitpack.io' }
+```
+```
 dependencies {
-implementation 'com.github.milansobhashna:apirxJava:1.0.0'
+    implementation 'com.github.milansobhashna:apirxJava:1.0.0'
 
     //retrofit, gson converter & rxJava adapter
     api("com.squareup.retrofit2:retrofit:2.9.0") {
@@ -40,21 +42,21 @@ implementation 'com.github.milansobhashna:apirxJava:1.0.0'
     implementation "com.squareup.okhttp3:okhttp:4.4.0"
     implementation "com.squareup.okhttp3:logging-interceptor:4.4.0"
 }
-
+```
 
 ============================main activity => 
 
 variable ==>
-
+```
 val mApiConfig = ApiConfig("base url ") 
 val mCompositeSubscription : CompositeSubscription? = CompositeSubscription()
-
+```
 call api function ==>
-
-launchPayTMCheckout()
-
+```
+loginApi()
+```
 create function for api call ==>
-
+```
 private fun loginApi (amount: String) {
         
         val logOut: Observable<LogInResponse> = mapplyScheduler.call(
@@ -77,3 +79,4 @@ private fun loginApi (amount: String) {
         })
         mCompositeSubscription!!.add(subscription)
     }
+```
