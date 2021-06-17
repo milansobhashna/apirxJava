@@ -57,7 +57,7 @@ loginApi()
 ```
 create function for api call ==>
 ```
-private fun loginApi (amount: String) {
+private fun loginApi () {
         
         val logOut: Observable<LogInResponse> = mapplyScheduler.call(
             mApiConfig.getClient()!!.create(ApiInterface::class.java).loginApiCall("number","id")
